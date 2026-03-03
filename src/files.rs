@@ -1,11 +1,24 @@
 // include filesystem library
 use std::fs;
 use std::path::Path;
+use std::process::exit;
+use colored::*;
 
 pub fn read_in_file(filename: &String) -> Vec<u8> {
 	
 	// read in data from file as a vector of bytes (u8 = 1 byte)
-	let data: Vec<u8> = fs::read(filename).expect("Error reading file.");
+	let data: Vec<u8>;
+
+	match fs::read(filename) {
+		Ok(content) => {
+			data = content;
+		},
+		Err(error) => {
+			println!("\n{} reading file: {}", "Error".red().bold(), error);
+
+			exit(1);
+		}
+	}
 
 	return data;
 }

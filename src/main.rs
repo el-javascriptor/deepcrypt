@@ -5,8 +5,8 @@ use colored::*;
 
 fn main() {
 
+
 	println!("\nWould you like to {} or {}?", "encrypt".blue().bold(), "decrypt".blue().bold());
-	print!("  {}", "> ".blue().bold());
 
 	let choice = input::input();
 
@@ -19,7 +19,6 @@ fn main() {
 
 fn encrypt_routine() {
 	println!("\nWhat {} do you wish to encrypt?", "file".blue().bold());
-	print!("  {}", "> ".blue().bold());
 
 	// collect filename information
 	let filename = input::input();
@@ -32,12 +31,10 @@ fn encrypt_routine() {
 	// as long as the user cannot remember their key, we will not let them encrypt
 	while unconfirmed_key {
 		println!("\nWhat {} do you wish to use to encrypt? (don't forget it!)", "key".blue().bold());
-		print!("  {}", "> ".blue().bold());
 
 		key = input::input();
 
 		println!("\nConfirm key:");
-		print!("  {}", "> ".blue().bold());
 
 		confirmed_key = input::input();
 
@@ -69,13 +66,11 @@ fn encrypt_routine() {
 
 fn decrypt_routine() {
 	println!("\nWhat {} do you wish to decrypt?", "file".blue().bold());
-	print!("  {}", "> ".blue().bold());
 
 	// collect filename information
 	let filename = input::input();
 
 	println!("\nWhat {} do you wish to use to encrypt? (don't forget it!)", "key".blue().bold());
-	print!("  {}", "> ".blue().bold());
 
 	let mut key = input::input();
 

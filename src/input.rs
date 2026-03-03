@@ -1,16 +1,15 @@
 
 // include standard input / output
 use std::io;
-
-// we need this to be able to flush the stdout
 use std::io::Write;
+use colored::*;
 
-/// Reads input from the stdin, trims whitespace, and returns.
-/// 
-/// **Side Effects**:
-/// - May return error if failed to flush.
-/// - Returns blank string if read is unsuccessful.
 pub fn input() -> String {
+
+	// our default input carrot thing
+	let carrot: String = format!("  {}", "> ".blue().bold());
+
+	print!("{carrot}");
 
 	// flush console output
 	io::stdout().flush().expect("Failed to flush console.");
