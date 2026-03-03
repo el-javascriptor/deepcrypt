@@ -5,7 +5,6 @@ use colored::*;
 
 fn main() {
 
-
 	println!("\nWould you like to {} or {}?", "encrypt".blue().bold(), "decrypt".blue().bold());
 
 	let choice = input::input();
