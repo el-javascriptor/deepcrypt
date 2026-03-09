@@ -3,6 +3,7 @@ mod files;
 mod encrypt;
 use colored::*;
 
+// the main function. Toggles between encrypt & decrypt control flows
 fn main() {
 
 	println!("\nWould you like to {} or {}?", "encrypt".blue().bold(), "decrypt".blue().bold());
